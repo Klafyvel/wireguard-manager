@@ -9,7 +9,7 @@ rofi -dmenu -password -no-fixed-num-lines -p "Sudo password : " -theme ~/.confi
 }
 
 function status_wireguard() {
-  systemctl status $SERVICE_NAME | grep "Active: active" -q
+  systemctl is-active $SERVICE_NAME >/dev/null 2>&1
   return $?
 }
 
