@@ -14,12 +14,12 @@ This is a simple, stupid `waybar` extension for toggling `wireguard`. It uses
 ![VPN switched on](screenshots/vpn-on.png)
 *VPN switched on, as seen in Waybar.*
 
-## Pre-requisites
+## Prerequisites
 
-You need to be able to manage Wireguard using Systemd, even though it should
+You need to be able to manage Wireguard using systemd, even though it should
 not be too difficult to change the script to use `wg` directly.
 
-If your Wireguard interface is `wg0`, enable the service using :
+If your Wireguard interface is `wg0`, enable the service using:
 
 ```bash
 sudo systemctl enable wg-quick@wg0.service
@@ -73,4 +73,3 @@ can think of.
 If you are a NetworkManager user, maybe you should rather use
 [wireguard-rofi-waybar ](https://github.com/HarHarLinks/wireguard-rofi-waybar), which seems to offer
 way more functionalities!
-
