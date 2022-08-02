@@ -38,23 +38,23 @@ Clone the repository in `~/.config/waybar/wireguard-manager`, then add this to
     "interval": 3,
     "return-type": "json",
     "format-icons": {
-      "connected": "<span color=\"#50fa7b\">VPN: 🔒</span>",
-      "disconnected": "<span color=\"#ff5555\">VPN: 🔓</span>"
+        "connected": "<span color=\"#50fa7b\">VPN: 🔒</span>",
+        "disconnected": "<span color=\"#ff5555\">VPN: 🔓</span>"
     },
     "on-click": "exec ~/.config/waybar/wireguard-manager/wireguard-manager.sh -t",
     "exec": "exec ~/.config/waybar/wireguard-manager/wireguard-manager.sh -s",
     "format": "{icon}"
-  }
+}
 ```
 
 See [Waybar's wiki](https://github.com/Alexays/Waybar/wiki/Module:-Custom) for
-more information on how to customise this.
+more information on how to customize this.
 
 ## Usage
 
 With the given configuration, the status of the connection will be updated every
 3 seconds. You can switch on/off the connection to your peer by clicking on the
-logo in Waybar.
+icon in Waybar.
 
 ## Customization
 
