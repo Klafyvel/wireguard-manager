@@ -14,12 +14,12 @@ This is a simple, stupid `waybar` extension for toggling `wireguard`. It uses
 ![VPN switched on](screenshots/vpn-on.png)
 *VPN switched on, as seen in Waybar.*
 
-## Pre-requisites
+## Prerequisites
 
-You need to be able to manage Wireguard using Systemd, even though it should
+You need to be able to manage Wireguard using systemd, even though it should
 not be too difficult to change the script to use `wg` directly.
 
-If your Wireguard interface is `wg0`, enable the service using :
+If your Wireguard interface is `wg0`, enable the service using:
 
 ```bash
 sudo systemctl enable wg-quick@wg0.service
@@ -38,23 +38,23 @@ Clone the repository in `~/.config/waybar/wireguard-manager`, then add this to
     "interval": 3,
     "return-type": "json",
     "format-icons": {
-      "connected": "<span color=\"#50fa7b\">VPN: 🔒</span>",
-      "disconnected": "<span color=\"#ff5555\">VPN: 🔓</span>"
+        "connected": "<span color=\"#50fa7b\">VPN: 🔒</span>",
+        "disconnected": "<span color=\"#ff5555\">VPN: 🔓</span>"
     },
     "on-click": "exec ~/.config/waybar/wireguard-manager/wireguard-manager.sh -t",
     "exec": "exec ~/.config/waybar/wireguard-manager/wireguard-manager.sh -s",
     "format": "{icon}"
-  }
+}
 ```
 
 See [Waybar's wiki](https://github.com/Alexays/Waybar/wiki/Module:-Custom) for
-more information on how to customise this.
+more information on how to customize this.
 
 ## Usage
 
 With the given configuration, the status of the connection will be updated every
 3 seconds. You can switch on/off the connection to your peer by clicking on the
-logo in Waybar.
+icon in Waybar.
 
 ## Customization
 
@@ -73,4 +73,3 @@ can think of.
 If you are a NetworkManager user, maybe you should rather use
 [wireguard-rofi-waybar ](https://github.com/HarHarLinks/wireguard-rofi-waybar), which seems to offer
 way more functionalities!
-
