@@ -6,20 +6,20 @@ This is a simple, stupid `waybar` extension for toggling `wireguard`. It uses
 ## Screenshots
 
 ![VPN switched off](screenshots/vpn-off.png)
-Figure: VPN switched off, as seen in Waybar.
+*VPN switched off, as seen in Waybar.*
 
 ![Password prompt](screenshots/password-prompt.png)
-Figure: Password prompt with Rofi.
+*Password prompt with Rofi.*
 
 ![VPN switched on](screenshots/vpn-on.png)
-Figure: VPN switched on, as seen in Waybar.
+*VPN switched on, as seen in Waybar.*
 
 ## Pre-requisites
 
-You need to be able to manage wireguard using `systemd`, even though it should
+You need to be able to manage Wireguard using Systemd, even though it should
 not be too difficult to change the script to use `wg` directly.
 
-If your wireguard interface is `wg0`, enable the service using :
+If your Wireguard interface is `wg0`, enable the service using :
 
 ```bash
 sudo systemctl enable wg-quick@wg0.service
@@ -48,19 +48,19 @@ Clone the repository in `~/.config/waybar/wireguard-manager`, then add this to
 ```
 
 See [Waybar's wiki](https://github.com/Alexays/Waybar/wiki/Module:-Custom) for
-more informations on how to customize this.
+more information on how to customise this.
 
 ## Usage
 
 With the given configuration, the status of the connection will be updated every
 3 seconds. You can switch on/off the connection to your peer by clicking on the
-logo in waybar.
+logo in Waybar.
 
 ## Customization
 
 This module is simple enough for anyone to customize it. You can change the way
 the rofi prompt looks by editing `rofi.rasi`, or you can use any other way to
-prompt the password. You can also change the way things look in waybar by
+prompt the password. You can also change the way things look in Waybar by
 editing the sample configuration.
 
 ## Contributions
@@ -72,4 +72,5 @@ can think of.
 
 If you are a NetworkManager user, maybe you should rather use
 [wireguard-rofi-waybar ](https://github.com/HarHarLinks/wireguard-rofi-waybar), which seems to offer
-way more functionalities !
+way more functionalities!
+
