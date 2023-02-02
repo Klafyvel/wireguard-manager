@@ -35,15 +35,16 @@ Clone the repository in `~/.config/waybar/wireguard-manager`, then add this to
 
 ```json
 "custom/wireguard-manager": {
-    "interval": 3,
-    "return-type": "json",
+    "exec": "exec ~/.config/waybar/wireguard-manager/wireguard-manager.sh -s",
+    "format": "{icon}",
     "format-icons": {
         "connected": "<span color=\"#50fa7b\">VPN: 🔒</span>",
-        "disconnected": "<span color=\"#ff5555\">VPN: 🔓</span>"
+        "disconnected": "<span color=\"#ff5555\">VPN: 🔓</span>",
     },
-    "on-click": "exec ~/.config/waybar/wireguard-manager/wireguard-manager.sh -t",
-    "exec": "exec ~/.config/waybar/wireguard-manager/wireguard-manager.sh -s",
-    "format": "{icon}"
+    "interval": "once",
+    "on-click": "~/.config/waybar/wireguard-manager/wireguard-manager.sh -t && pkill -SIGRTMIN+1 waybar",
+    "return-type": "json",
+    "signal": 1,
 }
 ```
 
