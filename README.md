@@ -35,6 +35,28 @@ Clone the repository in `~/.config/waybar/wireguard-manager`, then add this to
 
 ```json
 "custom/wireguard-manager": {
+    "exec": "exec ~/.config/waybar/wireguard-manager/wireguard-manager.sh -s",
+    "format": "{icon}",
+    "format-icons": {
+        "connected": "<span color=\"#50fa7b\">VPN: 🔒</span>",
+        "disconnected": "<span color=\"#ff5555\">VPN: 🔓</span>",
+    },
+    "interval": "once",
+    "on-click": "~/.config/waybar/wireguard-manager/wireguard-manager.sh -t && pkill -SIGRTMIN+1 waybar",
+    "return-type": "json",
+    "signal": 1,
+}
+```
+
+See [Waybar's wiki](https://github.com/Alexays/Waybar/wiki/Module:-Custom) for
+more information on how to customize this.
+
+### Toggling WireGuard "manually"
+
+If you intend on turning your Wireguard tunnel on and off through other means other than clicking on this waybar module, it can be useful to set the module itself in a different fashion:
+
+```json
+"custom/wireguard-manager": {
     "interval": 3,
     "return-type": "json",
     "format-icons": {
@@ -47,8 +69,7 @@ Clone the repository in `~/.config/waybar/wireguard-manager`, then add this to
 }
 ```
 
-See [Waybar's wiki](https://github.com/Alexays/Waybar/wiki/Module:-Custom) for
-more information on how to customize this.
+This is because the version of the module presented first updates itself only when clicked on, to avoid constant polling of the status of the systemd service for Wireguard. If you do use other means to set your tunnel up or down (such as `sudo systemctl stop wg-quick@wg0.service`), it is recommended to use this other version of the module, as it polls the current status of the systemd service every 3 seconds, updating the status of the module without requiring the user to click on it.
 
 ## Usage
 
